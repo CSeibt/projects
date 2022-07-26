@@ -35,7 +35,7 @@ using namespace std;
 #define nentriesMAX 2000000000
 
 
-void MakeTree_220706(
+void BinToRoot(
 	//TString folder = "/cephfs/projekte/astro/Felsenkeller/3He+4He/2ndCampaign/Analysis/TUBunker/Christoph/Runs/Run004/",
 	TString run = "run015",
 	double maxtime = 864000.,
@@ -480,7 +480,7 @@ void MakeTree_220706(
     cout << "Calculate the reverse time differences!" << endl;
     cout <<  endl;
 
-    // Run trought the tree in reverse order and calculate the time differences, and fill up the other side of the time diff histograms.
+    // Run through the tree in reverse order and calculate the time differences, and fill up the other side of the time diff histograms.
 	for (p=0;p<maxentries;p++) {
 		Data->GetEntry(maxentries-1-p);
                 //if(p<1000){cout << det << " " <<  adc << " " << EnergyDep_after[1] << endl;}
@@ -711,6 +711,9 @@ void MakeTree_220706(
 }
 
 
-
+void MakeTree_220706(){
+	TString run = "run015";
+	BinToRoot(run);
+}
 
 
